@@ -5,10 +5,9 @@
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-
         public string ImageName { get; set; }
 
-        public Article(int id, string name, string description, string clinetName, string imageName)
+        public Article(int id, string name, string description, string imageName)
         {
             Id = id;
             Title = name;
