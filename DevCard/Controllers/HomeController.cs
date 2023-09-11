@@ -24,6 +24,14 @@ namespace DevCard.Controllers
         [Route("[action]")]
         public IActionResult Contact(ContactFormModel form)
         {
+            // validation
+            if (!ModelState.IsValid)
+            {
+                //return all errors in view
+                ViewData["errors"] = ModelState.Values.SelectMany(value => value.Errors).Select(error => error.ErrorMessage);
+                return View(form);
+            }
+
             return RedirectToAction("Index", "Home");
         }
     }
