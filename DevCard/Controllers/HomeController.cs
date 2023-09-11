@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using DevCard.Models;
 
 namespace DevCard.Controllers
 {
@@ -12,10 +13,18 @@ namespace DevCard.Controllers
             return View();
         }
 
+        [HttpGet]
         [Route("[action]")]
         public IActionResult Contact()
         {
             return View();
+        }
+
+        [HttpPost]
+        [Route("[action]")]
+        public IActionResult Contact(ContactFormModel form)
+        {
+            return RedirectToAction("Index", "Home");
         }
     }
 }
